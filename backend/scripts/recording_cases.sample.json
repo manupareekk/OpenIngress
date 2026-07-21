@@ -1,0 +1,13 @@
+[
+  {
+    "name": "openingress-home",
+    "url": "http://localhost:5175/",
+    "goal": "Get an audit"
+  },
+  {
+    "name": "openingress-research",
+    "url": "http://localhost:5175/research",
+    "goal": "Latest research"
+  }
+]
+

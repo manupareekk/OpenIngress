@@ -1,0 +1,11 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "openingress.dev" }],
+      "destination": "https://www.openingress.dev/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [{ "source": "/((?!assets/).*)", "destination": "/index.html" }]
+}

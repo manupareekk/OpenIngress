@@ -1,0 +1,25 @@
+<svg width="1584" height="396" viewBox="0 0 1584 396" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1584" height="396" fill="#FFFFFF"/>
+  <!-- subtle grid -->
+  <g stroke="#E8E8E8" stroke-width="1">
+    <line x1="0" y1="66" x2="1584" y2="66"/>
+    <line x1="0" y1="132" x2="1584" y2="132"/>
+    <line x1="0" y1="198" x2="1584" y2="198"/>
+    <line x1="0" y1="264" x2="1584" y2="264"/>
+    <line x1="0" y1="330" x2="1584" y2="330"/>
+    <line x1="220" y1="0" x2="220" y2="396"/>
+    <line x1="440" y1="0" x2="440" y2="396"/>
+    <line x1="660" y1="0" x2="660" y2="396"/>
+    <line x1="880" y1="0" x2="880" y2="396"/>
+    <line x1="1100" y1="0" x2="1100" y2="396"/>
+    <line x1="1320" y1="0" x2="1320" y2="396"/>
+  </g>
+  <!-- schematic accents -->
+  <path d="M1180 198H1380L1440 138" stroke="#D4D4D4" stroke-width="1.5"/>
+  <path d="M1240 258H1480L1540 318" stroke="#D4D4D4" stroke-width="1.5"/>
+  <rect x="1378" y="196" width="4" height="4" fill="#D4D4D4"/>
+  <!-- wordmark -->
+  <text x="780" y="210" fill="#111111" font-family="Inter, Helvetica, Arial, sans-serif" font-size="56" font-weight="500" letter-spacing="-0.02em">OpenIngress</text>
+  <!-- tagline -->
+  <text x="782" y="258" fill="#666666" font-family="Inter, Helvetica, Arial, sans-serif" font-size="26" font-weight="400">making websites accessible to ai agents</text>
+</svg>

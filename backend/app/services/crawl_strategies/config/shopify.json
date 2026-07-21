@@ -1,0 +1,151 @@
+{
+  "name": "shopify",
+  "platform": "shopify",
+  "detection": {
+    "audit_focus": ["shopify"],
+    "platform": ["shopify"],
+    "url_contains": ["myshopify.com"],
+    "html_contains": [
+      "shopify",
+      "cdn.shopify.com",
+      "shopify-section",
+      "add to cart",
+      "add-to-cart",
+      "/products/",
+      "/collections/",
+      "productgroup",
+      "\"@type\":\"product\"",
+      "\"@type\": \"product\""
+    ]
+  },
+  "page_types": {
+    "homepage": {
+      "priority": 80,
+      "path_exact": ["/"]
+    },
+    "collection": {
+      "priority": 86,
+      "path_prefixes": ["/collections", "/collection"],
+      "html_contains": ["collection", "product-grid", "product card"]
+    },
+    "product": {
+      "priority": 92,
+      "path_prefixes": ["/products", "/product"],
+      "html_contains": ["add to cart", "product-form", "schema.org/product", "\"@type\":\"product\"", "\"@type\": \"product\""]
+    },
+    "cart": {
+      "priority": 98,
+      "path_prefixes": ["/cart"],
+      "html_contains": ["cart drawer", "cart item", "checkout"]
+    },
+    "checkout_handoff": {
+      "priority": 100,
+      "path_prefixes": ["/checkout", "/checkouts"],
+      "host_contains": ["checkout."],
+      "html_contains": ["checkout", "payment"]
+    },
+    "search": {
+      "priority": 74,
+      "path_prefixes": ["/search"],
+      "query_contains": ["q="],
+      "html_contains": ["search"]
+    },
+    "account_auth": {
+      "priority": 45,
+      "path_prefixes": ["/account", "/login", "/signin", "/auth"],
+      "html_contains": ["login", "sign in", "account"]
+    },
+    "policy": {
+      "priority": 8,
+      "path_prefixes": ["/policies", "/privacy", "/terms", "/legal", "/pages/privacy", "/pages/terms"],
+      "html_contains": ["privacy policy", "terms of service", "refund policy"]
+    },
+    "blog_content": {
+      "priority": 20,
+      "path_prefixes": ["/blogs", "/blog", "/news", "/articles"],
+      "html_contains": ["article", "blog"]
+    },
+    "unknown": {
+      "priority": 30
+    }
+  },
+  "action_roles": {
+    "checkout_link": {
+      "priority": 100,
+      "buyer_step": "checkout_handoff",
+      "tokens": ["checkout", "check out", "place order"],
+      "target_prefixes": ["/checkout", "/checkouts"]
+    },
+    "cart_open": {
+      "priority": 96,
+      "buyer_step": "cart",
+      "tokens": ["cart", "bag", "view cart"],
+      "target_prefixes": ["/cart"]
+    },
+    "add_to_cart": {
+      "priority": 94,
+      "buyer_step": "add_to_cart",
+      "tokens": ["add to cart", "add-to-cart", "add to bag", "buy now"]
+    },
+    "variant_control": {
+      "priority": 88,
+      "buyer_step": "variant_selection",
+      "tokens": ["variant", "size", "color", "colour", "swatch", "option", "subscription"]
+    },
+    "quantity_control": {
+      "priority": 82,
+      "buyer_step": "cart",
+      "tokens": ["quantity", "qty", "increase", "decrease", "plus", "minus"]
+    },
+    "product_link": {
+      "priority": 78,
+      "buyer_step": "product_page",
+      "target_prefixes": ["/products", "/product"],
+      "tokens": ["product", "view product", "details"]
+    },
+    "collection_link": {
+      "priority": 72,
+      "buyer_step": "collection_search",
+      "target_prefixes": ["/collections", "/collection"],
+      "tokens": ["collection", "shop", "catalog", "catalogue"]
+    },
+    "search": {
+      "priority": 68,
+      "buyer_step": "collection_search",
+      "target_prefixes": ["/search"],
+      "tokens": ["search"]
+    },
+    "account_gate": {
+      "priority": 35,
+      "buyer_step": "account_auth",
+      "target_prefixes": ["/account", "/login", "/signin", "/auth"],
+      "tokens": ["login", "log in", "sign in", "account"]
+    },
+    "popup_or_modal": {
+      "priority": 40,
+      "buyer_step": "theme_app_risk",
+      "tokens": ["popup", "modal", "newsletter", "subscribe", "upsell", "cross-sell"]
+    },
+    "external_app": {
+      "priority": 25,
+      "buyer_step": "external_app",
+      "external": true,
+      "tokens": ["reviews", "subscription", "quiz", "rewards"]
+    }
+  },
+  "funnel_steps": [
+    {"id": "homepage", "label": "Homepage", "page_types": ["homepage"], "action_roles": [], "weight": 8},
+    {"id": "collection_search", "label": "Collection/search", "page_types": ["collection", "search"], "action_roles": ["collection_link", "search"], "weight": 14},
+    {"id": "product_page", "label": "Product page", "page_types": ["product"], "action_roles": ["product_link"], "weight": 18},
+    {"id": "variant_selection", "label": "Variant selection", "page_types": ["product"], "action_roles": ["variant_control"], "weight": 14},
+    {"id": "add_to_cart", "label": "Add to cart", "page_types": ["product"], "action_roles": ["add_to_cart"], "weight": 18},
+    {"id": "cart", "label": "Cart drawer or cart page", "page_types": ["cart"], "action_roles": ["cart_open", "quantity_control"], "weight": 14},
+    {"id": "checkout_handoff", "label": "Checkout handoff", "page_types": ["checkout_handoff"], "action_roles": ["checkout_link"], "weight": 14, "handoff_only": true}
+  ],
+  "risk_roles": ["account_gate", "popup_or_modal", "external_app"],
+  "low_priority_page_types": ["policy", "blog_content"],
+  "safe_probe_rules": {
+    "checkout_handoff_only": true,
+    "forbidden_actions": ["submit_payment", "submit_pii", "place_order", "complete_order"]
+  }
+}

@@ -1,0 +1,22 @@
+<svg width="280" height="84" viewBox="0 0 280 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Faux brand: large beauty ecommerce -->
+  <path
+    d="M40 16c10 16 18 25 18 37.5C58 67.2 49.9 76 40 76s-18-8.8-18-22.5C22 41 30 32 40 16z"
+    stroke="#111111"
+    stroke-width="3"
+    stroke-linejoin="round"
+  />
+  <path d="M32 52c2.6 3.7 6.2 5.5 10 5.5" stroke="#111111" stroke-opacity="0.35" stroke-width="2.5" stroke-linecap="round"/>
+
+  <g fill="#111111">
+    <path d="M86 34h6.8l10.8 25.2L114.4 34h6.8l-14 32h-6.6L86 34z"/>
+    <path d="M129 34h23v5.1h-16.9v7.7h15.6v5h-15.6V61H153v5h-24V34z"/>
+    <path d="M160.8 34h6.2v27h16v5h-22.2V34z"/>
+    <path d="M188.3 50c0-9.4 7.3-16.6 17-16.6s17 7.2 17 16.6-7.3 16.6-17 16.6-17-7.2-17-16.6zm27.8 0c0-6.3-4.7-11.3-10.8-11.3s-10.8 5-10.8 11.3 4.7 11.3 10.8 11.3 10.8-5 10.8-11.3z"/>
+  </g>
+
+  <g fill="#111111" opacity="0.62">
+    <path d="M86 26h46v2.6H86V26z"/>
+    <path d="M86 70h70v2.6H86V70z"/>
+  </g>
+</svg>

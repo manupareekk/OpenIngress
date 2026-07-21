@@ -1,0 +1,38 @@
+[
+  {
+    "name": "nytimes-paywall-consent",
+    "url": "https://www.nytimes.com/",
+    "goal": "Accept all"
+  },
+  {
+    "name": "cloudflare-bot-check",
+    "url": "https://www.cloudflare.com/",
+    "goal": "Get started"
+  },
+  {
+    "name": "airbnb-dynamic-ux",
+    "url": "https://www.airbnb.com/",
+    "goal": "Search"
+  },
+  {
+    "name": "github-login-form",
+    "url": "https://github.com/login",
+    "goal": "Sign in"
+  },
+  {
+    "name": "stripe-docs-spa",
+    "url": "https://stripe.com/docs",
+    "goal": "API reference"
+  },
+  {
+    "name": "notion-marketing-heavy-js",
+    "url": "https://www.notion.so/",
+    "goal": "Get Notion free"
+  },
+  {
+    "name": "figma-auth-wall",
+    "url": "https://www.figma.com/",
+    "goal": "Sign up"
+  }
+]
+
